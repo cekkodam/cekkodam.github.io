@@ -59,20 +59,6 @@
     </form>
     <p>Credit By Tiktok @papafaresta </p>
   </div>
-
-  <script>
-    document.getElementById('register-link').addEventListener('click', () => {
-      document.getElementById('register-form').style.display = 'block';
-      document.querySelector('.form-container:first-child').style.display = 'none';
-    });
-
-    document.querySelector('form').addEventListener('submit', (e) => {
-      e.preventDefault();
-      const randomIndex = Math.floor(Math.random() * words.length);
-      const randomWord = words[randomIndex];
-      wordContainer.innerText = randomWord;
-    });
-  </script>
 </body>
 </html>
 
@@ -96,7 +82,7 @@
     }
     .popup-box.show {
       display: block;
-      position: top;
+      position: center;
     }
     .form-container {
       font-size: 30px;
