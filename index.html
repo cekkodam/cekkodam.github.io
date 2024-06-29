@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Login and Registration Form</title>
+  <title>Tempatnya Cek Kodam</title>
   <style>
     h2 {
       font-size: 40px;
@@ -57,7 +57,7 @@
       <button class="form-button" type="submit">Cek Sekarang</button>
       <form type="text" action="cekkodam.html">
     </form>
-    <p>Credit By Farhan </p>
+    <p>Credit By Tiktok @papafaresta </p>
   </div>
 
   <script>
@@ -76,43 +76,62 @@
 </body>
 </html>
 
-
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Selamat Cek Kodam</title>
+  <title>Pop-up Box Example</title>
   <style>
-    body {
-      font-size: 10px;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      border: solid;
-      text-align: center, 10px;
-      border: 1px solid rgb(7, 255, 243);
-      background-color:transparent;
+    /* Style the pop-up box */
+    .popup-box {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #FFFFFF;
+      padding: 20px;
+      border: 0px solid #FFFFFF;
+      border-radius: 10px;
+      box-shadow: transparent;
+      display: none;
     }
-    words {
-      font-family: arial, sans-serif;
-      font-size:5px;
-      text-align: center;
-      border: 10px;
-      text-align: center;
-      border: 1px solid rgb(10, 57, 100)
+    .popup-box.show {
+      display: block;
+    }
+    .form-container {
+      font-size: 30px;
+      background-color: transparent;
     }
   </style>
 </head>
 <body>
-  <h1>Selamat Kodam Kamu</h1>
-  <div id="word-container"></div>
+  
+  <!-- The pop-up box -->
+  <div class="popup-box">
+    <h2>Kodam Kamu!</h2>
+    <p id="word-container">Kodam Kamu Adalah</p>
+    <button class="close-btn"id="word-container"></button>
   <script>
-        const wordContainer = document.getElementById('word-container');
-        const words = ['Babi', 'Kuda', 'Laler Ijo', 'Belut', 'Beruang', 'Uler', 'Ulet', 'Beruk', 'Cacing', 'Kumbang','Macan','Kuntilanak Bunting','Pocong Joget','Genderuwo','Kuyang','Macan Kumbang','Kucing','Kambing','Marmut','Sapi','Bandot','Suster Ngepot','Pocong Mumun','Domba Kuring'];
+  const wordContainer = document.getElementById('word-container');
+        const words = ['Babi', 'Kuda Lumping', 'Laler Ijo', 'Belut Sawah', 'Beruang', 'Uler', 'Ulet', 'Beruk', 'Cacing', 'Kumbang','Macan','Pocong Bunting','Kuntilanak Cowo','Genderuwo','Tuyul Tumor','Kuyang','Kambing','Kecoa Bunting','Kucing Oyen','Macan Kumbang'];
 
     document.querySelector('form').addEventListener('submit', (e) => {
       e.preventDefault();
       const randomIndex = Math.floor(Math.random() * words.length);
       const randomWord = words[randomIndex];
       wordContainer.innerText = randomWord;
+    });
+    
+    const form = document.querySelector('form');
+    const popupBox = document.querySelector('.popup-box');
+    const closeBtn = document.querySelector('.close-btn');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      popupBox.classList.add('show');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      popupBox.classList.remove('show');
     });
   </script>
 </body>
