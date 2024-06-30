@@ -1,6 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Navbar Menu</title>
+  <style>
+    /* Style the navbar */
+    .navbar {
+      background-color: #333;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar-brand {
+      font-size: 24px;
+      color: #fff;
+      margin-right: 20px;
+    }
+    .navbar-menu {
+      display: none;
+    }
+    .navbar-menu.show {
+      display: block;
+    }
+    .navbar-menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .navbar-menu li {
+      margin-bottom: 10px;
+    }
+    .navbar-menu a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .hamburger {
+      display: inline-block;
+      cursor: pointer;
+    }
+    .hamburger span {
+      display: block;
+      width: 30px;
+      height: 3px;
+      background-color: #fff;
+      margin-bottom: 5px;
+    }
+    .hamburger span:last-child {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand">Farhan</div>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="navbar-menu" id="navbar-menu">
+      <ul>
+        <li><a href="#">Farhan</a></li>
+        <li><a href="#">Stevi</a></li>
+        <li><a href="#">Faresta</a></li>
+        
+      </ul>
+    </div>
+  </nav>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navbarMenu = document.getElementById('navbar-menu');
+
+    hamburger.addEventListener('click', () => {
+      navbarMenu.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
   <title>Tempatnya Cek Kodam</title>
   <style>
     h2 {
@@ -124,4 +206,4 @@
     });
   </script>
 </body>
-  </html>
+                                 </html>
