@@ -59,7 +59,13 @@
     </form>
     <p>Credit By Tiktok @papafaresta </p>
   </div>
-    <title>Pop-up Box Example</title>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pop-up Box Example</title>
   <style>
     /* Style the pop-up box */
     .popup-box {
@@ -82,16 +88,20 @@
       font-size: 30px;
       background-color: transparent;
     }
+    .button {
+      background-color: transparent;
+    }
   </style>
+</head>
 <body>
   <!-- The pop-up box -->
   <div class="popup-box">
     <h2>Kodam Kamu!</h2>
-    <p id="word-container">Kodam Kamu Adalah</p>
-    <button class="close-btn"id="word-container"></button>
+    <p type="text" id="word-container"></p>
+    <button class="close-btn"id=""></button>
   <script>
   const wordContainer = document.getElementById('word-container');
-        const words = ['Babi', 'Kuda Lumping', 'Laler Ijo', 'Belut Sawah', 'Beruang', 'Uler', 'Ulet', 'Beruk', 'Cacing', 'Kumbang','Macan','Pocong Bunting','Kuntilanak Cowo','Genderuwo','Tuyul Tumor','Kuyang','Kambing','Kecoa Bunting','Kucing Oyen','Macan Kumbang'];
+        const words = ['Kuda Lumping', 'Laler Ijo', 'Belut Sawah', 'Beruk', 'Cacing', 'Kumbang','Pocong Bunting','Kuntilanak Cowo','Genderuwo','Tuyul Tumor','Kuyang','Kambing','Kecoa Bunting','Kucing Oyen','Macan','Ulet Sagu','Mimi Peri','Kupu Kupu Malam','Keong','Siput','Kelinci'];
 
     document.querySelector('form').addEventListener('submit', (e) => {
       e.preventDefault();
@@ -113,6 +123,5 @@
       popupBox.classList.remove('show');
     });
   </script>
-  </head>
 </body>
-</html>
+  </html>
