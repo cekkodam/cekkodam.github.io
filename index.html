@@ -1,7 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Login and Registration Form</title>
+  <title>Tempat Cek Kodam</title>
+  <style>
+    /* Style the navbar */
+    .navbar {
+      background-color: #333;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar-brand {
+      font-size: 24px;
+      color: green;
+      margin-right: 20px;
+    }
+    .navbar-menu {
+      display: none;
+    }
+    .navbar-menu.show {
+      display: block;
+    }
+    .navbar-menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .navbar-menu li {
+      margin-bottom: 10px;
+    }
+    .navbar-menu a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .hamburger {
+      display: inline-block;
+      cursor: pointer;
+    }
+    .hamburger span {
+      display: block;
+      width: 30px;
+      height: 3px;
+      background-color: #fff;
+      margin-bottom: 5px;
+    }
+    .hamburger span:last-child {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand">Farhan</div>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="navbar-menu" id="navbar-menu">
+      <ul>
+        <li><a href="#">Farhan</a></li>
+        <li><a href="#">Stevi</a></li>
+        <li><a href="#">Faresta</a></li>
+        
+      </ul>
+    </div>
+  </nav>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navbarMenu = document.getElementById('navbar-menu');
+
+    hamburger.addEventListener('click', () => {
+      navbarMenu.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tempatnya Cek Kodam</title>
   <style>
     h2 {
       font-size: 40px;
@@ -57,56 +139,51 @@
       <button class="form-button" type="submit">Cek Sekarang</button>
       <form type="text" action="cekkodam.html">
     </form>
-    <p>Credit By Farhan </p>
+    <p>Credit By Tiktok @papafaresta </p>
   </div>
-
-  <script>
-    document.getElementById('register-link').addEventListener('click', () => {
-      document.getElementById('register-form').style.display = 'block';
-      document.querySelector('.form-container:first-child').style.display = 'none';
-    });
-
-    document.querySelector('form').addEventListener('submit', (e) => {
-      e.preventDefault();
-      const randomIndex = Math.floor(Math.random() * words.length);
-      const randomWord = words[randomIndex];
-      wordContainer.innerText = randomWord;
-    });
-  </script>
 </body>
 </html>
-
 
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Selamat Cek Kodam</title>
+  <title>Pop-up Box Example</title>
   <style>
-    body {
-      font-size: 10px;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      border: solid;
-      text-align: center, 10px;
-      border: 1px solid rgb(7, 255, 243);
-      background-color:transparent;
+    /* Style the pop-up box */
+    .popup-box {
+      position: fixed;
+      top: 5%;
+      left: 48%;
+      transform: translate(-50%, -50%);
+      background-color: pink;
+      padding: 20px;
+      border: 0px solid #FFFFFF;
+      border-radius: 10px;
+      box-shadow: transparent;
+      display: none;
     }
-    words {
-      font-family: arial, sans-serif;
-      font-size:5px;
-      text-align: center;
-      border: 10px;
-      text-align: center;
-      border: 1px solid rgb(10, 57, 100)
+    .popup-box.show {
+      display: block;
+      position: center, top;
+    }
+    .form-container {
+      font-size: 30px;
+      background-color: transparent;
+    }
+    .button {
+      background-color: transparent;
     }
   </style>
 </head>
 <body>
-  <h1>Selamat Kodam Kamu</h1>
-  <div id="word-container"></div>
+  <!-- The pop-up box -->
+  <div class="popup-box">
+    <h2>Kodam Kamu!</h2>
+    <p type="text" id="word-container"></p>
+    <button class="close-btn"id=""></button>
   <script>
-        const wordContainer = document.getElementById('word-container');
-        const words = ['Babi', 'Kuda', 'Laler Ijo', 'Belut', 'Beruang', 'Uler', 'Ulet', 'Beruk', 'Cacing', 'Kumbang','Macan'];
+  const wordContainer = document.getElementById('word-container');
+        const words = ['Kuda Lumping', 'Laler Ijo', 'Belut Sawah', 'Beruk', 'Cacing', 'Kumbang','Pocong Bunting','Kuntilanak Cowo','Genderuwo','Tuyul Tumor','Kuyang','Kambing','Kecoa Bunting','Kucing Oyen','Macan','Ulet Sagu','Mimi Peri','Kupu Kupu Malam','Keong','Siput','Kelinci'];
 
     document.querySelector('form').addEventListener('submit', (e) => {
       e.preventDefault();
@@ -114,6 +191,19 @@
       const randomWord = words[randomIndex];
       wordContainer.innerText = randomWord;
     });
+    
+    const form = document.querySelector('form');
+    const popupBox = document.querySelector('.popup-box');
+    const closeBtn = document.querySelector('.close-btn');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      popupBox.classList.add('show');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      popupBox.classList.remove('show');
+    });
   </script>
 </body>
-</html>
+  </html>
